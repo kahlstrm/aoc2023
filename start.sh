@@ -8,6 +8,12 @@ else
 fi
 
 FOLDER_NAME=$(printf "day%d" $DAY)
+# check if folder exists, if exists, don't do anything
+if [ -d "$FOLDER_NAME" ]; then
+  echo "Folder $FOLDER_NAME already exists"
+  exit 1
+fi
+
 echo "Creating folder $FOLDER_NAME"
 cp -r template $FOLDER_NAME
 #replace "REPLACE_PACKAGE_NAME_HERE" with the folder name in Cargo.toml file
