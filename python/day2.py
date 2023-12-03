@@ -6,7 +6,8 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green"""
 
 total = 0
 with open("input.txt") as f:
-    for line in f.readlines():
+    lines = f.readlines()
+    for line in lines if len(lines) != 0 else test_input.splitlines():
         max_reds = 0
         max_greens = 0
         max_blues = 0
